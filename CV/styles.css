@@ -3,6 +3,20 @@
     padding:0;
     box-sizing: border-box;
 }
+:root{
+    /*Colores*/
+    --ColorOcre: #F3C300;
+    --ColorCrema: #FFE4A2;
+    --ColorCeleste: #98D5EB;
+    --ColorAzul: #037389;
+    --ColorVerde: #838E25;
+    /*Tipografías*/
+    --FjallaOne: font-family: 'Fjalla One', sans-serif;
+    --Barlow: font-family: 'Barlow Semi Condensed', sans-serif;
+    --Abel:font-family: 'Abel', sans-serif;
+    --Raleway: font-family: 'Raleway', sans-serif;
+    }
+    /*--- HERO ---*/
 .menu{
     display:flex;
     justify-content: space-evenly;
@@ -12,7 +26,11 @@
 }
 .menu a{
     text-decoration: none;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-weight: bolder;
+    font-size: 19px;
+    text-transform: uppercase;
 }
 .menu li{
     list-style: none;
@@ -24,7 +42,89 @@
     width:100%;
     height:100vh;
     background-repeat: no-repeat;
-    background-size:100%;
-    background-position: center;
-    background-attachment: fixed;
+    background-position: bottom;
+    display:grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: 15% 62% 10%;
+    grid-template-areas: 
+    "texto ."
+    "presentacion foto"
+    "boton .";
+    align-items:center;
+}
+/*Estilo elementos*/
+.descripcion-fondo{
+    width:40vw;
+    height:auto;
+}
+.foto-perfil{
+    width: 31vw;
+    height: auto;
+}
+.boton-hero{
+    background: var(--ColorOcre);
+    color:#000;
+    text-decoration: none;
+    text-align:center;
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 30px;
+    padding: 15px 30px 15px 30px;
+    border-radius: 25px;
+    box-shadow: 12px 10px 9px -5px rgb(93 93 93 / 74%);
+}
+.texto-hero h1{
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 40px;
+}
+.texto-hero h2{
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-size: 20px;
+    color:#515151;
+}
+.descripcion-texto{
+    font-family: 'Abel', sans-serif;
+    font-size: 20px;
+    text-align: center;
+}
+/*Alineación elementos*/
+.descripcion{
+    grid-area: presentacion;
+    justify-self: end;
+    align-self: start;
+}
+.foto{
+    grid-area: foto;
+    justify-self: center;
+    align-self: start;
+}
+.boton{
+    grid-area: boton;
+    align-self: center;
+    justify-self: center;
+}
+.texto-hero{
+    grid-area: texto;
+    align-self: end;
+    justify-self: center;
+}
+.texto{    
+    grid-area: presentacion;
+    justify-self: center;
+    align-self: start;
+    position:absolute;
+    top: 215px;
+    left: 250px;
+    width: 27em;
+}
+    /*--- EXPERIENCIA ---*/
+.experiencia{
+    padding: 45px 60px;
+    background:var(--ColorCrema);
+}
+/*Estilo elementos*/
+.titulo-seccion{
+    font-family: 'Fjalla One', sans-serif;
+    font-size:40px;
+    text-align: center;
+    margin: auto;
 }
