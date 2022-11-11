@@ -44,7 +44,7 @@
     background-repeat: no-repeat;
     background-position: bottom;
     display:grid;
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: 2fr 1fr;
     grid-template-rows: 15% 62% 10%;
     grid-template-areas: 
     "texto ."
@@ -53,10 +53,6 @@
     align-items:center;
 }
 /*Estilo elementos*/
-.descripcion-fondo{
-    width:40vw;
-    height:auto;
-}
 .foto-perfil{
     width: 31vw;
     height: auto;
@@ -111,10 +107,12 @@
     grid-area: presentacion;
     justify-self: center;
     align-self: start;
-    position:absolute;
-    top: 215px;
-    left: 250px;
-    width: 27em;
+    background-image: url("images/descripcion-fondo.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 50px;
+    width:100%;
 }
     /*--- EXPERIENCIA ---*/
 .experiencia{
@@ -128,3 +126,105 @@
     text-align: center;
     margin: auto;
 }
+.linea-tiempo{
+    display:flex;
+    flex-flow: row wrap;
+    height:150px;
+    margin-top: 300px;
+    justify-content: space-around;
+    align-items: start;
+}
+.año{
+    width:20%;
+    text-align: center;
+    position: relative;
+}
+.año:nth-child(even){
+    bottom: 140%;
+}
+.año h3:nth-child(even){
+    margin-top:10px;
+}
+.año:nth-child(odd){
+    margin-top: 25px;
+}
+.descripcion-item{
+    text-align: left;
+    background-color: #98d5eba1;
+    padding: 30px 20px 30px 20px;
+    border-radius: 30px;
+    display: grid;
+    grid-template-columns: 70% 30%;
+    grid-template-rows: 80% 20%;
+    box-shadow: 7px 6px 14px 1px rgba(0,0,0,0.27);
+}
+.descripcion-item .puesto{
+    font-family: 'Barlow Semi Condensed';
+    font-size: 25px;
+}
+.descripcion-item .empresa{
+    font-family: 'Barlow Semi Condensed';
+    font-weight: bold;
+    font-style: italic;
+    font-size: 15px;
+    order: 3;
+    margin-top: 5px;
+}
+.descripcion-item .ver-mas{
+    align-self: center;
+    text-decoration: none;
+    font-family: 'Fjalla One';
+    font-size: 18px;
+    margin-top: 20px;
+    color: #838E25;
+    text-align: center;
+    background: linear-gradient(#ffffff 0 0) left / var(--p,0) no-repeat;
+    transition: .4s,background-position 0s;
+}
+.ver-mas:hover{
+    /* background-color: #ffffff; */
+    border-radius: 20px;
+    --p: 100%;
+    background-position: right;
+}
+.año h3{
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+.linea-tiempo::after{
+    content: '';
+    background-color: var(--ColorVerde);
+    width: 92%;
+    height:3px;
+    position:absolute;
+}
+
+/* .descripcion-item:nth-child(even){
+    top:55%;
+} */
+/* .linea-tiempo::before{
+    display:flex;
+    content: '';
+    position: absolute;
+    width: 100%;
+    background-color: #000;
+    left: 50%;
+    height: 3px;
+    border-radius: 10px;
+    justify-content:center;
+} */
+/* .descripcion-item::after{
+    flex: row wrap;
+    content: '';
+    position: absolute;
+    top: calc(50% + 10px);
+    right: calc(-11.11% - 11.5px);
+    height: 20px;
+    width: 20px;
+    background-color: #000;
+    border-radius: 50%;
+}
+.descripcion-item:nth-child(even)::after{
+    left: calc(-11.11% - 8.5px);
+  } */
